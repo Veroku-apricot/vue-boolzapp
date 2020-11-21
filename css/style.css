@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 /* Bottom background */
@@ -42,9 +43,10 @@
       display: flex;
     }
       .top-banner {
-        height: 70px;
+        height: 65px;
         background-color: #eaeaea;
         justify-content: space-between;
+        display: flex;
       }
         .top-banner > div {
           display: flex;
@@ -53,8 +55,12 @@
         .top-banner > div:first-child {
           width: 50%;
         }
+        .top-banner > div:last-child {
+          
+        }
         .avatar {
           max-height: 100%;
+          border-radius: 50%;
         }
       #notifications {
         height: 75px;
@@ -62,7 +68,7 @@
         align-items: center;
       }
       #search {
-        height: 55px;
+        height: 50px;
         background-color: #eaeaea;
       }
     /* Bottom part */
@@ -71,6 +77,11 @@
       height: calc(100% - 200px);
       background-color: white;
     }
+      .preview {
+        height: 70px;
+        border-bottom: 1px solid #eaeaea;
+        display: flex;
+      }
 
   /* Conversation (rigth part) */
   #conversation {
@@ -84,10 +95,15 @@
     #conversation > div {
       width: 100%;
     }
+    /* Messages */
     #mess {
       height: calc(100% - 140px);
     }
+    /* Type message */
     #type-mess {
       height: 70px;
       background-color: #f4eee9;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
     }
