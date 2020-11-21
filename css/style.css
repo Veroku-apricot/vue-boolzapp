@@ -95,14 +95,14 @@
         }
       #search {
         height: 50px;
-        background-color: #f4eee9;
+        background-color: #f2f2f2;
         padding: 5px;
       }
         #search > i {
           width: 10%;
           height: 100%;
           background-color: white;
-          border: 2px solid #eaeaea;
+          border: 1px solid #f2f2f2;
           border-right: none;
           display: flex;
           justify-content: center;
@@ -113,8 +113,7 @@
           width: 90%;
           height: 100%;
           padding-left: 10px;
-          border-color: #eaeaea;
-          border-style: solid;
+          border: 1px solid #eaeaea;
           border-left: none;
         }
     /* Bottom part */
@@ -139,9 +138,9 @@
         }
         .preview div > p:last-child, .preview > p {
           color: #b1b1b1;
-          font-size: 14px;
+          font-size: 12px;
         }
-      
+
   /* Conversation (rigth part) */
   #conversation {
     width: 65%;
@@ -154,15 +153,33 @@
     #conversation > div {
       width: 100%;
     }
+    .top-banner p {
+      color: #808080;
+      font-size: 14px;
+    }
     /* Messages */
     #mess {
-      height: calc(100% - 135px);
+      height: calc(100% - 130px);
     }
     /* Type message */
     #type-mess {
-      height: 70px;
+      height: 65px;
       background-color: #f4eee9;
       display: flex;
-      justify-content: space-around;
       align-items: center;
+      padding: 10px 0;
     }
+      #type-mess > input {
+        width: calc(100% - 150px);
+        height: 100%;
+        border: none;
+        padding-left: 10px;
+        border-radius: 5px;
+      }
+      #type-mess > i {
+        width: 75px;
+        font-size: 22px;
+        display: flex;
+        justify-content: center;
+        color: #808080;
+      }
