@@ -64,6 +64,9 @@
           color: #b1b1b1;
           font-size: 20px;
         }
+        .top-banner div:last-child > i:hover {
+          cursor: pointer;
+        }
         .avatar {
           max-height: 100%;
           border-radius: 50%;
@@ -92,8 +95,28 @@
         }
       #search {
         height: 50px;
-        background-color: #eaeaea;
+        background-color: #f4eee9;
+        padding: 5px;
       }
+        #search > i {
+          width: 10%;
+          height: 100%;
+          background-color: white;
+          border: 2px solid #eaeaea;
+          border-right: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #b1b1b1
+        }
+        #search > input {
+          width: 90%;
+          height: 100%;
+          padding-left: 10px;
+          border-color: #eaeaea;
+          border-style: solid;
+          border-left: none;
+        }
     /* Bottom part */
     #c-bottom {
       width: 100%;
@@ -104,9 +127,21 @@
         height: 70px;
         border-bottom: 1px solid #eaeaea;
         display: flex;
+        justify-content: space-between;
         padding: 8px;
       }
-
+        .preview > div {
+          display: flex;
+          width: 50%;
+        }
+        .name {
+          font-size: 18px;
+        }
+        .preview div > p:last-child, .preview > p {
+          color: #b1b1b1;
+          font-size: 14px;
+        }
+      
   /* Conversation (rigth part) */
   #conversation {
     width: 65%;
