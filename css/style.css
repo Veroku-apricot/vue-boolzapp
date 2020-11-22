@@ -147,9 +147,6 @@
   #conversation {
     width: 65%;
     height: 100%;
-    background-color: lightblue;
-    background-image: url(../img/whatsappbg.png);
-    background-size: contain;
     border-left: 1px solid #b1b1b1;
   }
     #conversation > div {
@@ -163,6 +160,7 @@
     #mess {
       height: calc(100% - 130px);
       padding: 30px 80px;
+      background-image: url(../img/mine.jpg);
       overflow: auto;
     }
       .message {
