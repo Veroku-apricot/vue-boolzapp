@@ -121,6 +121,7 @@
       width: 100%;
       height: calc(100% - 200px);
       background-color: white;
+      overflow: auto;
     }
       .preview {
         height: 70px;
@@ -129,12 +130,13 @@
         justify-content: space-between;
         padding: 8px;
       }
+        .preview:hover {
+          cursor: pointer;
+          background-color: #e9ebeb;
+        }
         .preview > div {
           display: flex;
           width: 50%;
-        }
-        .name {
-          font-size: 18px;
         }
         .preview div > p:last-child, .preview > p {
           color: #b1b1b1;
@@ -160,7 +162,44 @@
     /* Messages */
     #mess {
       height: calc(100% - 130px);
+      padding: 30px 80px;
+      overflow: auto;
     }
+      .message {
+        display: flex;
+        margin: 8px 0;
+      }
+        .message > div {
+          min-width: 100px;
+          max-width: 50%;
+          min-height: 45px;
+          padding: 0 10px 5px 10px;
+          border-radius: 12px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          font-size: 15px;
+        }
+          .message div > p:first-child {
+            margin: 13px 15px 0 5px;
+          }
+          .message div > p:last-child {
+            font-size: 10px;
+            align-self: flex-end;
+            color: #b1b1b1;
+          }
+      .message.me {
+        justify-content: flex-end;
+      }
+        .message.me > div {
+          background-color: #cbfbb3;
+        }
+      .message.you {
+        justify-content: flex-start;
+      }
+        .message.you > div {
+          background-color: white;
+        }
     /* Type message */
     #type-mess {
       height: 65px;
@@ -182,4 +221,7 @@
         display: flex;
         justify-content: center;
         color: #808080;
+      }
+      #type-mess > i:hover {
+        cursor: pointer;
       }
