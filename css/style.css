@@ -132,6 +132,9 @@
       }
         .preview:hover {
           cursor: pointer;
+          background-color: #f2f3f3;
+        }
+        .active {
           background-color: #e9ebeb;
         }
         .preview > div {

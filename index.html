@@ -55,47 +55,16 @@
 
           <!-- Bottom part -->
           <div id="c-bottom">
-            <div class="preview">
+            <div class="preview" v-for="(avatar, index) in avatars" @click="openConv(index)">
               <div class="">
-                <img class="avatar" src="img/avatar_5.jpg" alt="avatar">
+                <img class="avatar" :src="avatars[index]" alt="avatar">
                 <div class="">
-                  <p class="name">Link</p>
+                  <p class="name">{{names[index]}}</p>
                   <p>Ok</p>
                 </div>
               </div>
               <p>20 11 2020 10:52</p>
             </div>
-            <div class="preview">
-              <div class="">
-                <img class="avatar" src="img/avatar_2.jpg" alt="avatar">
-                <div class="">
-                  <p class="name">Kitboga</p>
-                  <p>Ok</p>
-                </div>
-              </div>
-              <p>20 11 2020 10:52</p>
-            </div>
-            <div class="preview">
-              <div class="">
-                <img class="avatar" src="img/avatar_8.jpg" alt="avatar">
-                <div class="">
-                  <p class="name">Hipster Mike</p>
-                  <p>Ok</p>
-                </div>
-              </div>
-              <p>20 11 2020 10:52</p>
-            </div>
-            <div class="preview">
-              <div class="">
-                <img class="avatar" src="img/avatar_4.jpg" alt="avatar">
-                <div class="">
-                  <p class="name">Lewis</p>
-                  <p>Ok</p>
-                </div>
-              </div>
-              <p>20 11 2020 10:52</p>
-            </div>
-
           </div>
         </div>
 
@@ -104,9 +73,9 @@
           <!-- Avatar -->
           <div class="top-banner">
             <div class="">
-              <img class="avatar" src="img/avatar_2.jpg" alt="avatar">
+              <img class="avatar" :src="avatars[i]" alt="avatar">
               <div class="">
-                <h3>Kitboga</h3>
+                <h3>{{names[i]}}</h3>
                 <p>Ultimo accesso...</p>
               </div>
             </div>
@@ -147,6 +116,8 @@
         </div>
       </div>
     </main>
+    <script type="text/javascript" src="js/script.js">
 
+    </script>
   </body>
 </html>
