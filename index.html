@@ -55,7 +55,7 @@
 
           <!-- Bottom part -->
           <div id="c-bottom">
-            <div class="preview" v-for="(avatar, index) in avatars" @click="openConv(index)">
+            <div class="preview" v-for="(avatar, index) in avatars" @click="openConv(index)" :class="index===i?'active':''">
               <div class="">
                 <img class="avatar" :src="avatars[index]" alt="avatar">
                 <div class="">

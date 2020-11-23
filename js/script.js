@@ -19,8 +19,6 @@ var app = new Vue ({
     openConv: function (index) {
       this.i = index;
     }
-
-
   }
 
 
