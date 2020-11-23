@@ -1,7 +1,7 @@
 var app = new Vue ({
   el: '#panel',
   data: {
-    i: [0],
+    i: 0,
     avatars: [
       'img/avatar_5.jpg',
       'img/avatar_2.jpg',
