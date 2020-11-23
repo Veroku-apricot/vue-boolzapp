@@ -166,6 +166,12 @@
       background-image: url(../img/mine.jpg);
       overflow: auto;
     }
+      .mess {
+          display: none;
+      }
+      .show {
+        display: contents;
+      }
       .message {
         display: flex;
         margin: 8px 0;
