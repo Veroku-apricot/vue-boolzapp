@@ -1,6 +1,7 @@
 var app = new Vue ({
   el: '#panel',
   data: {
+    newText: '',
     i: 0,
     conversations: [{
       // Conversation 1
@@ -70,6 +71,10 @@ var app = new Vue ({
   methods: {
     openConv: function (index) {
       this.i = index;
+    },
+    send: function () {
+      this.conversations[this.i].chat.push({message: this.newText, status: 'sent'});
+      this.newText = ''
     }
   }
 
