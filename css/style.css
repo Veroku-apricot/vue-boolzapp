@@ -166,47 +166,33 @@
       background-image: url(../img/mine.jpg);
       overflow: auto;
     }
-      .mess {
-          display: none;
-      }
-      .show {
-        display: contents;
-      }
       .message {
-        display: flex;
+        min-width: 100px;
+        min-height: 45px;
         margin: 8px 0;
+        padding: 0 10px 5px 10px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        font-size: 15px;
       }
-        .message > div {
-          min-width: 100px;
-          max-width: 50%;
-          min-height: 45px;
-          padding: 0 10px 5px 10px;
-          border-radius: 12px;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-end;
-          font-size: 15px;
-        }
-          .message div > p:first-child {
+          .message > p:first-child {
             margin: 13px 15px 0 5px;
           }
-          .message div > p:last-child {
+          .message > p:last-child {
             font-size: 10px;
             align-self: flex-end;
             color: #b1b1b1;
           }
-      .message.me {
-        justify-content: flex-end;
+      .message.sent {
+        margin-left: 55%;
+        background-color: #cbfbb3;
       }
-        .message.me > div {
-          background-color: #cbfbb3;
-        }
-      .message.you {
-        justify-content: flex-start;
+      .message.receved {
+        margin-right: 55%;
+        background-color: white;
       }
-        .message.you > div {
-          background-color: white;
-        }
     /* Type message */
     #type-mess {
       height: 65px;

@@ -55,11 +55,11 @@
 
           <!-- Bottom part -->
           <div id="c-bottom">
-            <div class="preview" v-for="(avatar, index) in avatars" @click="openConv(index)" :class="index===i?'active':''">
+            <div class="preview" v-for="(obj, index) in conversations" @click="openConv(index)" :class="index===i?'active':''">
               <div class="">
-                <img class="avatar" :src="avatars[index]" alt="avatar">
+                <img class="avatar" :src="obj.avatar" alt="avatar">
                 <div class="">
-                  <p class="name">{{names[index]}}</p>
+                  <p class="name">{{obj.name}}</p>
                   <p>Ok</p>
                 </div>
               </div>
@@ -73,9 +73,9 @@
           <!-- Avatar -->
           <div class="top-banner">
             <div class="">
-              <img class="avatar" :src="avatars[i]" alt="avatar">
+              <img class="avatar" :src="conversations[i].avatar" alt="avatar">
               <div class="">
-                <h3>{{names[i]}}</h3>
+                <h3>{{conversations[i].name}}</h3>
                 <p>Ultimo accesso...</p>
               </div>
             </div>
@@ -88,82 +88,9 @@
           <!-- Messages -->
           <div id="mess">
             <!-- Conversation 1 -->
-            <div class="mess" :class="i===0?'show':''">
-              <div class="message you">
-                <div class="">
-                  <p>Hey i found a weird green cape... is it yours?</p>
-                  <p>10:52</p>
-                </div>
-              </div>
-              <div class="message me">
-                <div class="">
-                  <p>Nope, don't think so</p>
-                  <p>10:52</p>
-                </div>
-              </div>
-            </div>
-            <!-- Conversation 2 -->
-            <div class="mess" :class="i===1?'show':''">
-              <div class="message me">
-                <div class="">
-                  <p>Hey there, how are you? Hope you doing fine!</p>
-                  <p>10:52</p>
-                </div>
-              </div>
-              <div class="message you">
-                <div class="">
-                  <p>Hello!</p>
-                  <p>10:52</p>
-                </div>
-              </div>
-              <div class="message you">
-                <div class="">
-                  <p>Yup, all good, thanks!</p>
-                  <p>10:52</p>
-                </div>
-              </div>
-            </div>
-            <!-- Conversation 3 -->
-            <div class="mess" :class="i===2?'show':''">
-              <div class="message you">
-                <div class="">
-                  <p>Come over and check out my beard</p>
-                  <p>10:52</p>
-                </div>
-              </div>
-              <div class="message me">
-                <div class="">
-                  <p>Ehm... No thanks</p>
-                  <p>10:52</p>
-                </div>
-              </div>
-              <div class="message you">
-                <div class="">
-                  <p>Envious...</p>
-                  <p>10:52</p>
-                </div>
-              </div>
-            </div>
-            <!-- Conversation 4 -->
-            <div class="mess" :class="i===3?'show':''">
-              <div class="message me">
-                <div class="">
-                  <p>Hey, wanna hang out at the park? I'm with my dog</p>
-                  <p>10:52</p>
-                </div>
-              </div>
-              <div class="message you">
-                <div class="">
-                  <p>Sure! My cousin Luisa is coming too :)</p>
-                  <p>10:52</p>
-                </div>
-              </div>
-              <div class="message me">
-                <div class="">
-                  <p>Nice!</p>
-                  <p>10:52</p>
-                </div>
-              </div>
+            <div class="message" v-for="text in conversations[i].chat" :class="text.status">
+                <p>{{text.message}}</p>
+                <p>10:52</p>
             </div>
           </div>
 
