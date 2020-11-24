@@ -9,7 +9,7 @@ var app = new Vue ({
       name: 'Link',
       chat: [{
         message: 'Hey i found a weird green cape... is it yours?',
-        status: 'receved'
+        status: 'received'
       },
       {
         message: "Nope, don't think so",
@@ -26,11 +26,11 @@ var app = new Vue ({
       },
       {
         message: "Hello!",
-        status: 'receved'
+        status: 'received'
       },
       {
         message: "Yup, all good, thanks!",
-        status: 'receved'
+        status: 'received'
       }]
     },
       // Conversation 3
@@ -39,7 +39,7 @@ var app = new Vue ({
       name: 'Hipster Mike',
       chat: [{
         message: 'Come over and check out my beard',
-        status: 'receved'
+        status: 'received'
       },
       {
         message: "Ehm... No thanks",
@@ -47,7 +47,7 @@ var app = new Vue ({
       },
       {
         message: "Envious...",
-        status: 'receved'
+        status: 'received'
       }]
     },
       // Conversation 4
@@ -60,7 +60,7 @@ var app = new Vue ({
       },
       {
         message: "Sure! My cousin Luisa is coming too :)",
-        status: 'receved'
+        status: 'received'
       },
       {
         message: "Nice!",
@@ -69,12 +69,19 @@ var app = new Vue ({
     }]
   },
   methods: {
+    // Open conversation
     openConv: function (index) {
       this.i = index;
     },
+    // Send message
     send: function () {
       this.conversations[this.i].chat.push({message: this.newText, status: 'sent'});
-      this.newText = ''
+      this.newText = '';
+      setTimeout (this.receive, 1500);
+    },
+
+    receive: function () {
+      this.conversations[this.i].chat.push({message: 'Ok dude', status: 'received'});
     }
   }
 
