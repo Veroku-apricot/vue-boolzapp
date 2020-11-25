@@ -7,7 +7,6 @@ var app = new Vue ({
       // Conversation 1
       avatar: 'img/avatar_5.jpg',
       name: 'Link',
-      lastMessage: "Nope, don't think so",
       chat: [{
         message: 'Hey i found a weird green cape... is it yours?',
         status: 'received'
@@ -21,7 +20,6 @@ var app = new Vue ({
     {
       avatar: 'img/avatar_2.jpg',
       name: 'Kitbooga',
-      lastMessage: "Yup, all good, thanks!",
       chat: [{
         message: 'Hey there, how are you? Hope you doing fine!',
         status: 'sent'
@@ -39,7 +37,6 @@ var app = new Vue ({
     {
       avatar: 'img/avatar_8.jpg',
       name: 'Hipster Mike',
-      lastMessage: "Envious...",
       chat: [{
         message: 'Come over and check out my beard',
         status: 'received'
@@ -57,7 +54,6 @@ var app = new Vue ({
     {
       avatar: 'img/avatar_4.jpg',
       name: 'Lewis',
-      lastMessage: "Nice!",
       chat: [{
         message: "Hey, wanna hang out at the park? I'm with my dog",
         status: 'sent'
@@ -79,15 +75,15 @@ var app = new Vue ({
     },
     // Send message
     send: function () {
-      this.conversations[this.i].chat.push({message: this.newText, status: 'sent'});
-      this.conversations[this.i].lastMessage = this.newText;
-      this.newText = '';
-      setTimeout (this.receive, 1500);
-    },
-
-    receive: function () {
-      this.conversations[this.i].chat.push({message: 'Ok dude', status: 'received'});
-      this.conversations[this.i].lastMessage = 'Ok dude';
+      if (this.newText === ''){
+      }else{
+        this.conversations[this.i].chat.push({message: this.newText, status: 'sent'});
+        this.newText = '';
+        // Receive message
+        setTimeout (() => {
+          this.conversations[this.i].chat.push({message: 'Ok dude', status: 'received'});
+        }, 1500)
+      }
     }
   }
 
