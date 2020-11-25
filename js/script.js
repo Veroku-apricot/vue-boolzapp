@@ -3,6 +3,7 @@ var app = new Vue ({
   data: {
     newText: '',
     i: 0,
+    searchContact: '',
     conversations: [{
       // Conversation 1
       avatar: 'img/avatar_5.jpg',
@@ -84,6 +85,11 @@ var app = new Vue ({
           this.conversations[this.i].chat.push({message: 'Ok dude', status: 'received'});
         }, 1500)
       }
+    }
+  },
+  computed: {
+  filteredItems: function () {
+    return this.conversations.slice(0, 3)
     }
   }
 
