@@ -88,8 +88,11 @@ var app = new Vue ({
     }
   },
   computed: {
-  filteredItems: function () {
-    return this.conversations.slice(0, 3)
+    filteredUsers: function () {
+      var self = this;
+      return self.conversations.filter(function (user) {
+        return user.name.indexOf(self.searchContact) !== -1
+      })
     }
   }
 
