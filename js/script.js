@@ -8,6 +8,7 @@ var app = new Vue ({
       // Conversation 1
       avatar: 'img/avatar_5.jpg',
       name: 'Link',
+      user: true,
       chat: [{
         message: 'Hey i found a weird green cape... is it yours?',
         status: 'received'
@@ -21,6 +22,7 @@ var app = new Vue ({
     {
       avatar: 'img/avatar_2.jpg',
       name: 'Kitbooga',
+      user: true,
       chat: [{
         message: 'Hey there, how are you? Hope you doing fine!',
         status: 'sent'
@@ -38,6 +40,7 @@ var app = new Vue ({
     {
       avatar: 'img/avatar_8.jpg',
       name: 'Hipster Mike',
+      user: true,
       chat: [{
         message: 'Come over and check out my beard',
         status: 'received'
@@ -55,6 +58,7 @@ var app = new Vue ({
     {
       avatar: 'img/avatar_4.jpg',
       name: 'Lewis',
+      user: true,
       chat: [{
         message: "Hey, wanna hang out at the park? I'm with my dog",
         status: 'sent'
@@ -85,17 +89,17 @@ var app = new Vue ({
           this.conversations[this.i].chat.push({message: 'Ok dude', status: 'received'});
         }, 1500)
       }
-    }
-  },
-  computed: {
-    filteredUsers: function () {
-      var self = this;
-      return this.conversations.filter(function (user) {
-        return user.name.indexOf(self.searchContact) != -1
+    },
+    filter: function () {
+      this.conversations.forEach(user => {
+        if (user.name.toLowerCase().includes(this.searchContact.toLowerCase())){
+          user.user= true;
+        }else{
+          user.user= false;
+        }
       })
     }
   }
-
 
 
 

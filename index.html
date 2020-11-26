@@ -48,13 +48,13 @@
             <!-- Search tool -->
             <div id="search">
               <i class="fas fa-search"></i>
-              <input v-model="searchContact" placeholder="Cerca o inizia una nuova chat">
+              <input v-model="searchContact" @keyup="filter" placeholder="Cerca o inizia una nuova chat">
             </div>
           </div>
 
           <!-- Bottom part -->
           <div id="c-bottom">
-            <div class="preview" v-for="(obj, index) in filteredUsers" @click="openConv(index)" :class="index===i?'active':''">
+            <div class="preview" v-for="(obj, index) in conversations" v-if="obj.user" @click="openConv(index)" :class="index===i?'active':''">
               <div class="">
                 <img class="avatar" :src="obj.avatar" alt="avatar">
                 <div class="">
