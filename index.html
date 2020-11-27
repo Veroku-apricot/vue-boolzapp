@@ -62,7 +62,7 @@
                   <p>{{obj.chat[obj.chat.length - 1].message}}</p>
                 </div>
               </div>
-              <p>20 11 2020 10:52</p>
+              <p>{{obj.chat[obj.chat.length - 1].time}}</p>
             </div>
           </div>
         </div>
@@ -75,7 +75,7 @@
               <img class="avatar" :src="conversations[i].avatar" alt="avatar">
               <div class="">
                 <h3>{{conversations[i].name}}</h3>
-                <p>Ultimo accesso...</p>
+                <p>Ultimo accesso: {{conversations[i].chat[conversations[i].chat.length - 1].time}}</p>
               </div>
             </div>
             <div class="">
@@ -89,7 +89,7 @@
             <!-- Conversation 1 -->
             <div class="message" v-for="text in conversations[i].chat" :class="text.status">
                 <p>{{text.message}}</p>
-                <p>10:52</p>
+                <p>{{text.time}}</p>
             </div>
           </div>
 
