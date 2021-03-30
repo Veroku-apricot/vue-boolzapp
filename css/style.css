@@ -150,7 +150,6 @@
         }
         .preview div > p:last-child {
           width: 100px;
-          border: 1px solid black;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
