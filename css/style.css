@@ -116,6 +116,9 @@
           border: 1px solid #eaeaea;
           border-left: none;
         }
+        #search > input:focus {
+          outline: none;
+        }
     /* Bottom part */
     #c-bottom {
       width: 100%;
@@ -144,6 +147,12 @@
         .preview div > p:last-child, .preview > p {
           color: #b1b1b1;
           font-size: 12px;
+        }
+        .preview div > p:last-child {
+          width: 70%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
 
   /* Conversation (rigth part) */
@@ -176,6 +185,7 @@
         flex-direction: column;
         justify-content: flex-end;
         font-size: 15px;
+        word-wrap: break-word;
       }
           .message > p:first-child {
             margin: 13px 15px 0 5px;
@@ -218,3 +228,15 @@
       #type-mess > i:hover {
         cursor: pointer;
       }
+
+@media all and (max-width: 767px){
+
+  #contacts {
+    width: 100%;
+  }
+  #conversation {
+    display: none;
+  }
+
+    
+}
