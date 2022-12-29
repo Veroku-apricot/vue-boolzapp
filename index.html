@@ -9,7 +9,7 @@
     <!-- Css link -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Link Vue -->
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>Boolzapp</title>
   </head>
   <body>
@@ -56,7 +56,7 @@
 
           <!-- Bottom part -->
           <div id="c-bottom">
-            <div class="preview" v-for="(obj, index) in conversations" v-if="obj.user" @click="openConv(index)" :class="index===i?'active':''">
+            <!-- <div class="preview" v-for="(obj, index) in conversations" v-if="obj.user" @click="openConv(index)" :class="index===i?'active':''">
               <div class="">
                 <img class="avatar" :src="obj.avatar" alt="avatar">
                 <div class="">
@@ -65,7 +65,7 @@
                 </div>
               </div>
               <p>{{obj.chat[obj.chat.length - 1].time}}</p>
-            </div>
+            </div> -->
           </div>
         </div>
 
