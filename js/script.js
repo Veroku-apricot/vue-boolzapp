@@ -1,88 +1,90 @@
-var app = new Vue ({
-  el: '#panel',
-  data: {
-    newText: '',
-    i: 0,
-    searchContact: '',
-    conversations: [{
-      // Conversation 1
-      avatar: 'img/avatar_5.jpg',
-      name: 'Link',
-      user: true,
-      chat: [{
-        message: 'Hey i found a weird green cape... is it yours?',
-        status: 'received',
-        time: '20.11.2020 11.30'
+const { createApp } = Vue
+createApp({
+  data() {
+    return {
+      newText: '',
+      i: 0,
+      searchContact: '',
+      conversations: [{
+        // Conversation 1
+        avatar: 'img/avatar_5.jpg',
+        name: 'Link',
+        user: true,
+        chat: [{
+          message: 'Hey i found a weird green cape... is it yours?',
+          status: 'received',
+          time: '20.11.2020 11.30'
+        },
+        {
+          message: "Nope, don't think so",
+          status: 'sent',
+          time: '20.11.2020 11.32'
+        }]
       },
+        // Conversation 2
       {
-        message: "Nope, don't think so",
-        status: 'sent',
-        time: '20.11.2020 11.32'
+        avatar: 'img/avatar_2.jpg',
+        name: 'Kitbooga',
+        user: true,
+        chat: [{
+          message: 'Hey there, how are you? Hope you doing fine!',
+          status: 'sent',
+          time: '20.11.2020 11.30'
+        },
+        {
+          message: "Hello!",
+          status: 'received',
+          time: '20.11.2020 11.32'
+        },
+        {
+          message: "Yup, all good, thanks!",
+          status: 'received',
+          time: '20.11.2020 11.32'
+        }]
+      },
+        // Conversation 3
+      {
+        avatar: 'img/avatar_8.jpg',
+        name: 'Hipster Mike',
+        user: true,
+        chat: [{
+          message: 'Come over and check out my beard',
+          status: 'received',
+          time: '20.11.2020 11.30'
+        },
+        {
+          message: "Ehm... No thanks",
+          status: 'sent',
+          time: '20.11.2020 11.34'
+        },
+        {
+          message: "Envious...",
+          status: 'received',
+          time: '20.11.2020 11.36'
+        }]
+      },
+        // Conversation 4
+      {
+        avatar: 'img/avatar_4.jpg',
+        name: 'Lewis',
+        user: true,
+        chat: [{
+          message: "Hey, wanna hang out at the park? I'm with my dog",
+          status: 'sent',
+          time: '20.11.2020 11.30'
+        },
+        {
+          message: "Sure! My cousin Luisa is coming too :)",
+          status: 'received',
+          time: '20.11.2020 11.31'
+        },
+        {
+          message: "Nice!",
+          status: 'sent',
+          time: '20.11.2020 11.33'
+        }]
       }]
-    },
-      // Conversation 2
-    {
-      avatar: 'img/avatar_2.jpg',
-      name: 'Kitbooga',
-      user: true,
-      chat: [{
-        message: 'Hey there, how are you? Hope you doing fine!',
-        status: 'sent',
-        time: '20.11.2020 11.30'
-      },
-      {
-        message: "Hello!",
-        status: 'received',
-        time: '20.11.2020 11.32'
-      },
-      {
-        message: "Yup, all good, thanks!",
-        status: 'received',
-        time: '20.11.2020 11.32'
-      }]
-    },
-      // Conversation 3
-    {
-      avatar: 'img/avatar_8.jpg',
-      name: 'Hipster Mike',
-      user: true,
-      chat: [{
-        message: 'Come over and check out my beard',
-        status: 'received',
-        time: '20.11.2020 11.30'
-      },
-      {
-        message: "Ehm... No thanks",
-        status: 'sent',
-        time: '20.11.2020 11.34'
-      },
-      {
-        message: "Envious...",
-        status: 'received',
-        time: '20.11.2020 11.36'
-      }]
-    },
-      // Conversation 4
-    {
-      avatar: 'img/avatar_4.jpg',
-      name: 'Lewis',
-      user: true,
-      chat: [{
-        message: "Hey, wanna hang out at the park? I'm with my dog",
-        status: 'sent',
-        time: '20.11.2020 11.30'
-      },
-      {
-        message: "Sure! My cousin Luisa is coming too :)",
-        status: 'received',
-        time: '20.11.2020 11.31'
-      },
-      {
-        message: "Nice!",
-        status: 'sent',
-        time: '20.11.2020 11.33'
-      }]
-    }]
+    }
   },
   methods: {
     // Open conversation
@@ -120,4 +122,4 @@ var app = new Vue ({
 
 
 
-})
+}).mount('#panel')
