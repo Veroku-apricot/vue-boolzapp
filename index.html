@@ -56,16 +56,18 @@
 
           <!-- Bottom part -->
           <div id="c-bottom">
-            <!-- <div class="preview" v-for="(obj, index) in conversations" v-if="obj.user" @click="openConv(index)" :class="index===i?'active':''">
-              <div class="">
-                <img class="avatar" :src="obj.avatar" alt="avatar">
+            <div v-for="(obj, index) in conversations">
+              <div class="preview" v-if="obj.user" @click="openConv(index)" :class="index===i?'active':''"> 
                 <div class="">
-                  <p class="name">{{obj.name}}</p>
-                  <p>{{obj.chat[obj.chat.length - 1].message}}</p>
+                  <img class="avatar" :src="obj.avatar" alt="avatar">
+                  <div class="">
+                    <p class="name">{{obj.name}}</p>
+                    <p>{{obj.chat[obj.chat.length - 1].message}}</p>
+                  </div>
                 </div>
+                <p>{{obj.chat[obj.chat.length - 1].time}}</p>
               </div>
-              <p>{{obj.chat[obj.chat.length - 1].time}}</p>
-            </div> -->
+            </div> 
           </div>
         </div>
 
@@ -98,7 +100,7 @@
           <!-- Type message -->
           <div id="type-mess">
             <i class="far fa-smile-wink"></i>
-            <input v-model="newText" placeholder="Scrivi un messaggio" v-on:keyup.13="send">
+            <input v-model="newText" placeholder="Scrivi un messaggio" @keyup.enter="send">
             <i class="fas fa-microphone" @click="send"></i>
           </div>
         </div>
